@@ -1,0 +1,57 @@
+<section>
+	<ul class="nav nav-pills">
+		<li ng-class="{ active:panel.isSelected(1) }"><a href ng-click="panel.selectTab(1)">Description</a></li>
+		<li ng-class="{ active:panel.isSelected(2) }"><a href ng-click="panel.selectTab(2)">Specifications</a></li>
+		<li ng-class="{ active:panel.isSelected(3) }"><a href ng-click="panel.selectTab(3)">Reviews</a></li>
+	</ul>
+	<div class="panel" ng-show="panel.isSelected(1)">
+		<h4>Description</h4>
+		<p>{{product.description}}</p>
+	</div>
+	<div class="panel" ng-show="panel.isSelected(2)">
+		<h4>Specifications</h4>
+		<blockquote>None yet</blockquote>
+	</div>
+	
+	<!--  Review Tab's Content  -->
+	<div ng-show="panel.isSelected(3)">
+		<!-- Reviews -->
+		
+		<ul>
+			<h4>Reviews</h4>
+			<li ng-repeat="review in product.reviews">
+			<blockquote>
+				<strong>{{review.stars}} Stars: </strong>
+				{{review.body}}
+				<cite class="clearfix">—{{review.author}}</cite>
+			</blockquote>
+		</ul>
+		
+		
+		<form name="reviewForm" role="form"
+				ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)"
+				novalidate>
+			<div class="form-group">
+				
+				<select ng-model="reviewCtrl.review.stars" class="form-control" required>
+					<option value="1">1 star</option>
+					<option value="2">2 stars</option>
+					<option value="3">3 stars</option>
+				</select>
+				<label>review:</label>
+				<textarea ng-model="reviewCtrl.review.body" class="form-control" required></textarea>
+				<label>by:</label>
+				<input name="author" type="email"  ng-model="reviewCtrl.review.author" class="form-control" required/>
+				
+				<input type="submit" value="Submit" ng-disabled="!reviewForm.$valid" />
+				<div> reviewForm is {{reviewForm.$valid}} </div>
+				<blockquote>
+					<h4>Preview:</h4>
+					<b>Stars: {{reviewCtrl.review.stars}}</b>
+					<b>{{reviewCtrl.review.body}}</b>
+					<cite>by: {{reviewCtrl.review.author}}</cite>
+				</blockquote>
+			</div>
+		</form>
+	</div>
+</section>

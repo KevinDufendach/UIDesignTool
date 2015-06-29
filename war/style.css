@@ -1,0 +1,14 @@
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
+}
+
+.loginBar {
+	background-color: #424545;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: large;
+}
