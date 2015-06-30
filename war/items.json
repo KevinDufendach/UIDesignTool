@@ -1,39 +1,35 @@
 [
 	{
-		"name": "Dodecahedron",
-		"price": 2.3,
-		"description": "A Dodecahedron is a gem with excellent brilliance",
-		"images": [
+		"category": "Identifiers",
+		"items": [
 			{
-				"full": "dodecahedron-01-full.jpg",
-				"thumb": "dodecahedron-01-thumb.jpg"
+				"name": "Patient Name"
 			},
 			{
-				"full": "dodecahedron-02-full.jpg",
-				"thumb": "dodecahedron-02-thumb.jpg"
+				"name": "MR Number"
+			},
+			{
+				"name": "Sex"
 			}
 		],
-		"canPurchase": "true",
-		"soldOut": "false",
-		"reviews": [
-			{
-				"stars": 5,
-				"body": "I love this product",
-				"author": "joe@na.com"
-			},
-			{
-				"stars": 1,
-				"body": "I wish I had my life back",
-				"author": "disgruntled@despair.inc"
-			}
-		]
+		"description": "A Dodecahedron is a gem with excellent brilliance"
 	},
 	{
-		"name": "Pentagon",
-		"price": 5.95,
-		"description": ". . .",
-		"canPurchase": "true",
-		"soldOut": "false",
-		"reviews": []
+		"category": "Labs",
+		"items": [
+			{
+				"name": "Blood Gas"
+			},
+			{
+				"name": "Electrolyte Panel"
+			},
+			{
+				"name": "CBC"
+			},
+			{
+				"name": "Liver Function Tests"
+			}
+		],
+		"description": ". . ."
 	}
 ]
