@@ -3,31 +3,60 @@
 		"category": "Identifiers",
 		"items": [
 			{
-				"name": "Patient Name"
+				"name": "Patient Name",
+				"id": "ID_NAME",
+				"selected": true,
+				"component": "base"
 			},
 			{
-				"name": "MR Number"
+				"name": "MR Number",
+				"id": "ID_MRN",
+				"selected": true,
+				"component": "base"
 			},
 			{
-				"name": "Sex"
+				"name": "Sex",
+				"id": "ID_SEX",
+				"component": "base"
 			}
 		],
 		"description": "A Dodecahedron is a gem with excellent brilliance"
 	},
 	{
+		"category": "Status",
+		"items": [
+			{
+				"name": "Age and Weight",
+				"id": "STATUS_AGE_WEIGHT",
+				"component": "age_weight"		
+			
+			}
+		]
+	},
+	{
 		"category": "Labs",
 		"items": [
 			{
-				"name": "Blood Gas"
+				"name": "Blood Gas",
+				"id": "LAB_BLOOD_GAS",
+				"selected": true,
+				"component": "blood_gas"
 			},
 			{
-				"name": "Electrolyte Panel"
+				"name": "Electrolyte Panel",
+				"id": "LAB_ELECTROLYTE_PANEL",
+				"selected": false,
+				"component": "lyte_panel"
 			},
 			{
-				"name": "CBC"
+				"name": "CBC",
+				"id": "LAB_CBC",
+				"component": "cbc"
 			},
 			{
-				"name": "Liver Function Tests"
+				"name": "Liver Function Tests",
+				"id": "LAB_LFT",
+				"component": "base"
 			}
 		],
 		"description": ". . ."

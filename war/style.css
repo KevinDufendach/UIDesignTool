@@ -12,3 +12,19 @@
 	text-align: center;
 	font-size: large;
 }
+
+.right_v_stick {
+	background-image: url('images/rightsided_v.png');
+	background-position: left center;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	padding-left: 0.4em;
+}
+
+.left_v_stick {
+	background-image: url('images/leftsided_v.png');
+	background-position: right center;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	padding-right: 0.4em;
+}
