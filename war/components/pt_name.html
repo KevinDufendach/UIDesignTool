@@ -1,2 +1,3 @@
-<div ng-show="library.fields.name_display.value == 'full'">{{patient.demographics.name_last}}, {{patient.demographics.name_first}}</div>
-<div ng-show="library.fields.name_display.value == 'short'">{{patient.demographics.name_last}}, {{patient.demographics.name_first | limitTo : 1 : 0}}</div>
+<div ng-show="library.fields.name_display.value === 'full'">{{patient.demographics.name_last}}, {{patient.demographics.name_first}}</div>
+<div ng-show="library.fields.name_display.value === 'short'">{{patient.demographics.name_last}}, {{patient.demographics.name_first | limitTo : 1 : 0}}</div>
+<div ng-show="library.fields.name_display.value === 'abbr'">{{patient.demographics.name_last | limitTo: 1: 0}}, {{patient.demographics.name_first | limitTo : 1 : 0}} {{patient.demographics.name_middle | limitTo : 1 : 0}}</div>

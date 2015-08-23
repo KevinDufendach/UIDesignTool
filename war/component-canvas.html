@@ -1,0 +1,16 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">Canvas</div>
+	<!-- 			<span ng-repeat="patient in library.patients">{{patient.id}}</span> -->
+	<table>
+		<tbody>
+			<tr ng-repeat="patient in library.patients">
+				<td ng-repeat="category in library.categories">
+					<div ng-repeat="item in category.items" ng-show="item.selected"
+						ng-click="itemCtrl.setActiveItem(item)" class="component">
+						<ng-include src="'components/'+item.component"></ng-include>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -32,6 +32,30 @@
 		
 	} ]);
 	
+	app.directive('propertiesPanel', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'properties-panel.html'
+		};
+		
+	});
+	
+	app.directive('componentCanvas', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'component-canvas.html'
+		};
+		
+	});
+	
+	app.directive('elementList', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'element-list.html'
+		};
+		
+	});
+	
 })();
 
 // (function(){

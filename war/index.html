@@ -55,60 +55,9 @@ li {
 		<div class="loginBar">User Interface Design Tool - Powered by
 			Vanderbilt</div>
 		<div ng-controller="ItemController as itemCtrl">
-			<div class="panel panel-primary">
-				<div class="panel-heading">Elements</div>
-				<table class="table">
-					<tbody>
-						<tr>
-							<th ng-repeat="category in library.categories">{{category.category}}</th>
-						</tr>
-						<tr>
-							<td ng-repeat="category in library.categories">
-								<div ng-repeat="item in category.items" class="checkbox"
-									ng-click="itemCtrl.setActiveItem(item)">
-									<label><input type="checkbox" ng-model="item.selected" />{{item.name}}</label>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="panel panel-primary">
-				<div class="panel-heading">Canvas</div>
-				<!-- 			<span ng-repeat="patient in library.patients">{{patient.id}}</span> -->
-				<table>
-					<tbody>
-						<tr ng-repeat="patient in library.patients">
-							<td ng-repeat="category in library.categories">
-								<div ng-repeat="item in category.items" ng-show="item.selected"
-									ng-click="itemCtrl.setActiveItem(item)" class="component">
-									<ng-include src="'components/'+item.component"></ng-include>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="panel panel-primary">
-				<div class="panel-heading">Preferences</div>
-				<h2>Active item: {{itemCtrl.activeItem.name}}</h2>
-				<div ng-repeat="fieldId in itemCtrl.activeItem.fields">
-					{{fieldId}} |||
-					<table ng-init="field=library.fields[fieldId]">
-						<tbody>
-							<th>
-								<td>{{field.label}}</td>
-							</th>
-							<tr>
-								<td><ng-include src="'fields/radio.html'"></ng-include></td>
-							</tr>
-						</tbody>
-					</table>
-					
-					{{library.fields[fieldId]}}
-				
-				</div>
-			</div>
+			<element-list></element-list>
+			<component-canvas></component-canvas>
+			<properties-panel></properties-panel>
 
 			<!-- 		<ul class="list-group"> -->
 			<!-- 			<li class="list-group-item" ng-repeat="product in library.products"> -->
