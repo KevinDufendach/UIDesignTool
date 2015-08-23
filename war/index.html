@@ -7,69 +7,28 @@
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 <title>User Interface Design Tool - Powered by Vanderbilt</title>
-<style>
 
-.thumbnail {
-	height: 50px;
-	width: 50px;
-	text-align: center;
-	padding-top: 0px;
-	transition: none;
-	-webkit-transition: none;
-	-moz-transition: none;
-	-o-transition: none;
-	cursor: pointer;
-	background: rgb(182, 173, 123);
-}
-
-.hover {
-	outline: 2px dashed black !important;
-}
-
-.thumbnail[data-drag="false"] {
-	background: green;
-	padding: 10px;
-}
-
-.slot {
-	margin-right: 2px;
-	margin-top: 2px;
-	width: 25;
-	height: 25px;
-	display: inline-block;
-	border: none;
-}
-
-li {
-	height: 56px;
-	width: 60px;
-	line-height: 20px;
-	border: 1px solid #ddd;
-	padding: 3px;
-	margin-left: 10px;
-}
-</style>
 </head>
 <body>
-	<div ng-controller="LibraryController as library">
-		<div class="loginBar">User Interface Design Tool - Powered by
-			Vanderbilt</div>
-		<div ng-controller="ItemController as itemCtrl">
-			<element-list></element-list>
-			<component-canvas></component-canvas>
-			<properties-panel></properties-panel>
 
-			<!-- 		<ul class="list-group"> -->
-			<!-- 			<li class="list-group-item" ng-repeat="product in library.products"> -->
-			<!-- 				<h3> -->
-			<!-- 					<product-title></product-title> -->
-			<!-- 				</h3> -->
-			<!-- 				<product-panels></product-panels> -->
-			<!-- 			</li> -->
-			<!-- 		</ul> -->
+	<div class="loginBar">User Interface Design Tool - Powered by
+		Vanderbilt</div>
+	<div class="container-fluid"
+		ng-controller="LibraryController as library">
+
+		<div ng-controller="ItemController as itemCtrl">
+			<component-canvas></component-canvas>
+			<div class="row">
+				<div class="col-sm-4">
+					<properties-panel></properties-panel>
+				</div>
+				<div class="col-sm-8">
+
+					<element-list></element-list>
+				</div>
+			</div>
 		</div>
 	</div>
-
 
 	<script src="/js/jquery-1.11.3.min.js"></script>
 	<script src="/js/angular.min.js"></script>
