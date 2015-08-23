@@ -1,1 +1,2 @@
-{{patient.labs.bg.source}}: {{patient.labs.bg.pH}}/{{patient.labs.bg.PCO2}}/{{patient.labs.bg.PO2}}/{{patient.labs.bg.HCO3}}/{{patient.labs.bg.BE}}
+<div ng-show="library.fields.name_display.value == 'full'">{{patient.demographics.name_last}}, {{patient.demographics.name_first}}</div>
+<div ng-show="library.fields.name_display.value == 'short'">{{patient.demographics.name_last}}, {{patient.demographics.name_first | limitTo : 1 : 0}}</div>

@@ -6,7 +6,7 @@
 				"name": "Patient Name",
 				"id": "ID_NAME",
 				"selected": true,
-				"component": "base.html",
+				"component": "pt_name.html",
 				"fields": [
 					"name_display"
 				]
