@@ -28,3 +28,27 @@
 	vertical-align: middle;
 	padding-right: 0.4em;
 }
+
+/* .component th { */
+/* 	font-weight: bold; */
+/* 	font-size: 0.8em; */
+/* } */
+
+/* .component table, .component td, .component tr { */
+/* 	text-align: center; */
+/* 	border-collapse: collapse; */
+/* 	border-spacing: 0; */
+/* 	padding-top: 0; */
+/* 	padding-bottom: 0; */
+/* } */
+
+.component:hover {
+	background-color: #eeddee;
+	cursor: cell;
+}
+
+.component-selected {
+	outline-style: dashed;
+	outline-width: thin;
+	outline-color: gray;
+}

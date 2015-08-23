@@ -1,11 +1,17 @@
 (function(){
-	var app = angular.module('library', [ 'library-items' ]);
+	var app = angular.module('library', ['library-items', 'ngDragDrop']);
 
 	app.controller("LibraryController", ['$http', function($http){ // this is a controller
 		//this.product = gem; // product is a property of controller
 		
 		var library = this;
 		library.categories = [ ];
+		library.patients = [ ];
+		
+		library.myitem = "none";
+		
+		library.list1 = {title: 'AngularJS - Drag Me'};
+		library.list2 = {};
 		
 		// $http.post('/path/to/resource.json', {param: 'value'});
 		// $http.delete('/path/to/resource.json');
@@ -14,13 +20,17 @@
 		
 		$http.get('items.json').success(function(data) {
 			library.categories = data;
-		}); // product is a property of controller
+		});
+		
+		$http.get('fields.json').success(function(data) {
+			library.fields = data;
+		});
+		
+		$http.get('scenarios/patients.json').success(function(data) {
+			library.patients = data;
+		});
 		
 	} ]);
-	
-	
-	
-	//var gems = ;
 	
 })();
 

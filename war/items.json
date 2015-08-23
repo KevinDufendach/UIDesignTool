@@ -6,21 +6,23 @@
 				"name": "Patient Name",
 				"id": "ID_NAME",
 				"selected": true,
-				"component": "base"
+				"component": "base.html",
+				"fields": [
+					"name_display"
+				]
 			},
 			{
 				"name": "MR Number",
 				"id": "ID_MRN",
 				"selected": true,
-				"component": "base"
+				"component": "base.html"
 			},
 			{
 				"name": "Sex",
 				"id": "ID_SEX",
-				"component": "base"
+				"component": "base.html"
 			}
-		],
-		"description": "A Dodecahedron is a gem with excellent brilliance"
+		]
 	},
 	{
 		"category": "Status",
@@ -28,7 +30,7 @@
 			{
 				"name": "Age and Weight",
 				"id": "STATUS_AGE_WEIGHT",
-				"component": "age_weight"		
+				"component": "age_weight.html"		
 			
 			}
 		]
@@ -40,25 +42,24 @@
 				"name": "Blood Gas",
 				"id": "LAB_BLOOD_GAS",
 				"selected": true,
-				"component": "blood_gas"
+				"component": "blood_gas.html"
 			},
 			{
 				"name": "Electrolyte Panel",
 				"id": "LAB_ELECTROLYTE_PANEL",
-				"selected": false,
-				"component": "lyte_panel"
+				"selected": true,
+				"component": "lyte_panel.html"
 			},
 			{
 				"name": "CBC",
 				"id": "LAB_CBC",
-				"component": "cbc"
+				"component": "cbc.html"
 			},
 			{
 				"name": "Liver Function Tests",
 				"id": "LAB_LFT",
-				"component": "base"
+				"component": "base.html"
 			}
-		],
-		"description": ". . ."
+		]
 	}
 ]

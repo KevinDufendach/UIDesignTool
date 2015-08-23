@@ -4,59 +4,128 @@
 <link rel="stylesheet" type="text/css"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="style.css" />
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 <title>User Interface Design Tool - Powered by Vanderbilt</title>
+<style>
 
+.thumbnail {
+	height: 50px;
+	width: 50px;
+	text-align: center;
+	padding-top: 0px;
+	transition: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	cursor: pointer;
+	background: rgb(182, 173, 123);
+}
+
+.hover {
+	outline: 2px dashed black !important;
+}
+
+.thumbnail[data-drag="false"] {
+	background: green;
+	padding: 10px;
+}
+
+.slot {
+	margin-right: 2px;
+	margin-top: 2px;
+	width: 25;
+	height: 25px;
+	display: inline-block;
+	border: none;
+}
+
+li {
+	height: 56px;
+	width: 60px;
+	line-height: 20px;
+	border: 1px solid #ddd;
+	padding: 3px;
+	margin-left: 10px;
+}
+</style>
 </head>
-<body ng-controller="LibraryController as library">
-	<div class="loginBar">User Interface Design Tool - Powered by
-		Vanderbilt</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">Elements</div>
-		<table class="table">
-			<tbody>
-				<tr>
-					<th ng-repeat="category in library.categories">{{category.category}}</th>
-				</tr>
-				<tr>
-					<td ng-repeat="category in library.categories">
-						<div ng-repeat="item in category.items" class="checkbox">
-							<label><input type="checkbox" ng-model="item.selected" />{{item.name}}</label>
-						</div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">Canvas</div>
-		<table>
-			<tbody>
-				<tr>
-					<td ng-repeat="category in library.categories">
-						<div ng-repeat="item in category.items" ng-show="item.selected">
-							<ng-include src="'components/'+item.component+'.html'"></ng-include>
-						</div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<div class="panel panel-primary">
-		<div class="panel-heading">Preferences</div>
-		
+<body>
+	<div ng-controller="LibraryController as library">
+		<div class="loginBar">User Interface Design Tool - Powered by
+			Vanderbilt</div>
+		<div ng-controller="ItemController as itemCtrl">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Elements</div>
+				<table class="table">
+					<tbody>
+						<tr>
+							<th ng-repeat="category in library.categories">{{category.category}}</th>
+						</tr>
+						<tr>
+							<td ng-repeat="category in library.categories">
+								<div ng-repeat="item in category.items" class="checkbox"
+									ng-click="itemCtrl.setActiveItem(item)">
+									<label><input type="checkbox" ng-model="item.selected" />{{item.name}}</label>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">Canvas</div>
+				<!-- 			<span ng-repeat="patient in library.patients">{{patient.id}}</span> -->
+				<table>
+					<tbody>
+						<tr ng-repeat="patient in library.patients">
+							<td ng-repeat="category in library.categories">
+								<div ng-repeat="item in category.items" ng-show="item.selected"
+									ng-click="itemCtrl.setActiveItem(item)" class="component">
+									<ng-include src="'components/'+item.component"></ng-include>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">Preferences</div>
+				<h2>Active item: {{itemCtrl.activeItem.name}}</h2>
+				<div ng-repeat="fieldId in itemCtrl.activeItem.fields">
+					{{fieldId}} |||
+					<table ng-init="field=library.fields[fieldId]">
+						<tbody>
+							<th>
+								<td>{{field.label}}</td>
+							</th>
+							<tr>
+								<td><ng-include src="'fields/radio.html'"></ng-include></td>
+							</tr>
+						</tbody>
+					</table>
+					
+					{{library.fields[fieldId]}}
+				
+				</div>
+			</div>
+
+			<!-- 		<ul class="list-group"> -->
+			<!-- 			<li class="list-group-item" ng-repeat="product in library.products"> -->
+			<!-- 				<h3> -->
+			<!-- 					<product-title></product-title> -->
+			<!-- 				</h3> -->
+			<!-- 				<product-panels></product-panels> -->
+			<!-- 			</li> -->
+			<!-- 		</ul> -->
+		</div>
 	</div>
 
-	<!-- 		<ul class="list-group"> -->
-	<!-- 			<li class="list-group-item" ng-repeat="product in library.products"> -->
-	<!-- 				<h3> -->
-	<!-- 					<product-title></product-title> -->
-	<!-- 				</h3> -->
-	<!-- 				<product-panels></product-panels> -->
-	<!-- 			</li> -->
-	<!-- 		</ul> -->
 
-	<script type="text/javascript" src="/js/angular.min.js"></script>
-	<script type="text/javascript" src="/js/app.js"></script>
-	<script type="text/javascript" src="/js/items.js"></script>
+	<script src="/js/jquery-1.11.3.min.js"></script>
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/angular-dragdrop.min.js"></script>
+	<script src="/js/app.js"></script>
+	<script src="/js/items.js"></script>
 </body>
 </html>
