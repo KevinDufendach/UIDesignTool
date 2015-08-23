@@ -1,0 +1,48 @@
+[
+	{
+		"id": "12345678",
+		"demographics": 
+		{
+			"name_first": "Curious",
+			"name_last": "George",
+			"sex": "male"
+		},
+
+		"labs": 
+		{
+			"bg": 
+			{
+				"time": "-12h",
+				"source": "ARTERIAL",
+				"pH": "7.32",
+				"PCO2": "54",
+				"PO2": "72",
+				"HCO3": "21",
+				"BE": "-1.2"
+			}
+		}
+	},
+
+	{
+		"id": "87654321",
+		"demographics": 
+		{
+			"name_first": "Snappy",
+			"name_last": "Appel",
+			"sex": "female"
+		},
+
+		"labs": 
+		{
+			"bg": 
+			{
+				"source": "CAPILLARY",
+				"pH": "7.29",
+				"PCO2": "61",
+				"PO2": "102",
+				"HCO3": "20",
+				"BE": "-2.2"
+			}
+		}
+	}
+]

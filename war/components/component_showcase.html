@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!--     <link type="text/css" rel="stylesheet" href="nicuhandoff.css"> -->
+<link type="text/css" rel="stylesheet" href="hellomvp.css">
+<title>Components Library</title>
+
+</head>
+
+<body>
+
+<table border="1">
+<tbody>
+<tr>
+	<td>electrolyte panel</td>
+	<td>
+		<table id="lytePanel">
+			<tbody>
+				<tr>
+					<td id="central_sodium" style="border-bottom: thin solid black; border-right: thin solid black">Na</td>
+					<td id="central_chloride" style="border-bottom: thin solid black; border-right: thin solid black">Cl</td>
+					<td id="central_bun" style="border-bottom: thin solid black">BUN</td>
+					<td class="right_v_stick" rowspan="2" id="central_glucose">Glu</td>
+				</tr>
+				<tr>
+					<td id="central_potassium" style="border-right: thin solid black">K</td>
+					<td id="central_bicarb" style="border-right: thin solid black">HCO3</td>
+					<td id="central_creatinine">Cr</td>
+				</tr>
+			</tbody>
+		</table>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		CBC
+	</td>
+	<td>
+		<table id="cbc">
+			<tbody>
+				<tr>
+					<td id="cbc_wbc" class="left_v_stick" rowspan="2">WBC</td>
+					<td id="cbc_hb" style="border-bottom: thin solid black">Hb</td>
+					<td id="cbc_plt" class="right_v_stick" rowspan="2">Plt</td>
+				</tr>
+				<tr>
+					<td id="cbc_hct">Hct</td>
+				</tr>
+			</tbody>
+		</table>
+	</td>
+</tr>
+
+<tr>
+	<td>Patient name</td>
+	<td><div id="patient_name"><span id="last_name">last</span>, <span id="first_name">first<span></div></td>
+</tr>
+
+<tr>
+	<td>Day's age and weight</td>
+	<td>
+		<table id="stats_panel">
+			<tbody>
+				<tr>
+					<td>Birth</td>
+					<td>Current</td>
+				</tr>
+				<tr>
+					<td><span id="stats_dob" title="Date of birth">X/XX</span></td>
+					<td><span id="stats_dol" title="Day of life">XX</span>d</td>
+				</tr>
+				<tr>
+					<td><span id="stats_bga">XX X/7</span></td>
+					<td><span id="stats_pma">XX X/7</span></td>
+				</tr>
+				<tr>
+					<td><span id="stats_bwt">bwt</span></td>
+					<td><span id="stats_wt">wt</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</td>
+</tr>
+
+<tr>
+	<td>Coag stick figure</td>
+	<td>
+		<table id="coags_stick_figure">
+			<tbody>
+				<tr>
+					<td id="coags_pt" style="border-bottom: thin solid black">PT</td>
+					<td id="coags_inr" rowspan="2" class="right_v_stick">INR</td>
+				</tr>
+				<tr>
+					<td id="coags_ptt">PTT</td>
+				</tr>
+			</tbody>
+		</table>
+	</td>
+</tr>
+
+<tr>
+	<td>Coag table</td>
+	<td>
+		<table id="coags_table">
+			<tbody>
+				<tr>
+					<td class="label">PT:</td>
+					<td id="coags_pt">PT</td>
+				</tr>
+				<tr>
+					<td class="label">PTT:</td>
+					<td id="coags_ptt">PTT</td>
+				</tr>
+				<tr>
+					<td class="label">INR:</td>
+					<td id="coags_inr">INR</td>
+				</tr>
+			</tbody>
+		</table>
+	</td>
+</tr>
+
+<tr>
+	<td>ToDo list</td>
+	<td>
+		<div id="todo_list" class="todo_list">
+			<ul>
+				<li>CXR at 8pm</li>
+				<li>BG at 7pm</li>
+			</ul>
+		</div>
+	</td>
+</tr>
+
+</tbody>
+</table>
+</body>
+</html>

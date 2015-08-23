@@ -1,0 +1,12 @@
+{
+	"name_display": {
+		"type": "Radio",
+		"label": "How should the name be displayed?",
+		"value": "full",
+		"options": [
+			{"value": "full", "label": "Lastname, First", "default": true},
+			{"value": "short", "label": "Lastname, F"},
+			{"value": "abbr", "label": "L, F M"}
+		]
+	}
+}
