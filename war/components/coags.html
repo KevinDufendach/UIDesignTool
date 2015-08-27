@@ -1,0 +1,34 @@
+<!-- <div ng-show="library.fields.name_display.value === 'full'">{{patient.demographics.name_last}}, {{patient.demographics.name_first}}</div> -->
+<!-- <div ng-show="library.fields.name_display.value === 'short'">{{patient.demographics.name_last}}, {{patient.demographics.name_first | limitTo : 1 : 0}} {{patient.demographics.name_middle | limitTo : 1 : 0}}</div> -->
+<!-- <div ng-show="library.fields.name_display.value === 'abbr'">{{patient.demographics.name_last | limitTo: 1: 0}}, {{patient.demographics.name_first | limitTo : 1 : 0}} {{patient.demographics.name_middle | limitTo : 1 : 0}}</div> -->
+<div ng-show="fields.coags_display.value === 'stick'">
+	<table id="coags">
+		<tbody>
+			<tr>
+				<td style="border-right: thin solid black" width="50%">PT</td>
+				<td width="50%">PTT</td>
+			</tr>
+			<tr>
+				<td class="lower_v_stick" colspan=2>INR</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div ng-show="fields.coags_display.value === 'list'">
+	<table>
+		<tbody>
+			<tr>
+				<td>PT:</td>
+				<td>[PT]</td>
+			</tr>
+			<tr>
+				<td>PTT:</td>
+				<td>[PTT]</td>
+			</tr>
+			<tr>
+				<td>INR:</td>
+				<td>[INR]</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

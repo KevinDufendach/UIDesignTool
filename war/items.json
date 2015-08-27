@@ -1,64 +1,78 @@
 [
 	{
 		"category": "Identifiers",
-		"items": [
+		"items": 
+		[
 			{
 				"name": "Patient Name",
 				"id": "ID_NAME",
 				"selected": true,
 				"component": "pt_name.html",
-				"fields": [
+				"fields": 
+				[
 					"name_display"
 				]
 			},
+
 			{
 				"name": "MR Number",
 				"id": "ID_MRN",
 				"selected": true,
-				"component": "base.html"
+				"component": "mrn.html"
 			},
+
 			{
 				"name": "Sex",
 				"id": "ID_SEX",
-				"component": "base.html"
+				"component": "sex.html"
 			}
 		]
 	},
+
 	{
 		"category": "Status",
-		"items": [
+		"items": 
+		[
 			{
 				"name": "Age and Weight",
 				"id": "STATUS_AGE_WEIGHT",
-				"component": "age_weight.html"		
-			
+				"component": "age_weight.html"
 			}
 		]
 	},
+
 	{
 		"category": "Labs",
-		"items": [
+		"items": 
+		[
 			{
 				"name": "Blood Gas",
 				"id": "LAB_BLOOD_GAS",
 				"selected": true,
 				"component": "blood_gas.html"
 			},
+
 			{
 				"name": "Electrolyte Panel",
 				"id": "LAB_ELECTROLYTE_PANEL",
 				"selected": true,
 				"component": "lyte_panel.html"
 			},
+
 			{
 				"name": "CBC",
 				"id": "LAB_CBC",
 				"component": "cbc.html"
 			},
+
 			{
-				"name": "Liver Function Tests",
-				"id": "LAB_LFT",
-				"component": "base.html"
+				"name": "Coagulation Labs",
+				"id": "LAB_COAG",
+				"component": "coags.html",
+				"fields": 
+				[
+					"coags_display"
+				]
 			}
 		]
 	}

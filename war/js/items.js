@@ -5,13 +5,13 @@
 (function(){
 	var app = angular.module('library-items', [ ]);
 	
-	app.controller('ItemController', function() {
+	app.controller("ItemController", ["$scope", function($scope) {
 		this.activeItem = [] ;
 		
 		this.setActiveItem = function(setItem) {
 			this.activeItem = setItem;
 		}
-	});
+	}]);
 	
 	app.directive('myComponent', function() {
 		return {

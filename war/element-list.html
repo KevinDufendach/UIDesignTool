@@ -1,12 +1,12 @@
 <div class="panel panel-primary">
-	<div class="panel-heading">Elements</div>
+	<div class="panel-heading">Toolbox</div>
 	<table class="table">
 		<tbody>
 			<tr>
-				<th ng-repeat="category in library.categories">{{category.category}}</th>
+				<th ng-repeat="category in categories">{{category.category}}</th>
 			</tr>
 			<tr>
-				<td ng-repeat="category in library.categories">
+				<td ng-repeat="category in categories">
 					<div ng-repeat="item in category.items" class="checkbox"
 						ng-click="itemCtrl.setActiveItem(item)">
 						<label><input type="checkbox" ng-model="item.selected" />{{item.name}}</label>

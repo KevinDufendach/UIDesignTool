@@ -29,6 +29,22 @@
 	padding-right: 0.4em;
 }
 
+.upward_v_stick {
+	background-image: url('images/upward_v.png');
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	text-align: center;
+	padding-bottom: 0.4em;
+}
+
+.lower_v_stick {
+	background-image: url('images/lower_v.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	text-align: center;
+	padding-top: 0.4em;
+}
+
 /* .component th { */
 /* 	font-weight: bold; */
 /* 	font-size: 0.8em; */

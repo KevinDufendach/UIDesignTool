@@ -4,9 +4,18 @@
 		"label": "How should the name be displayed?",
 		"value": "full",
 		"options": [
-			{"value": "full", "label": "Lastname, First", "default": true},
-			{"value": "short", "label": "Lastname, F"},
+			{"value": "full", "label": "Lastname, First"},
+			{"value": "short", "label": "Lastname, F M"},
 			{"value": "abbr", "label": "L, F M"}
+		]
+	},
+	"coags_display": {
+		"type": "Radio",
+		"label": "How should coagulation labs be displayed?",
+		"value": "stick",
+		"options": [
+			{"value": "stick", "label": "Stick diagram"},
+			{"value": "list", "label": "As a list"}
 		]
 	}
 }

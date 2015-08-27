@@ -1,12 +1,12 @@
 <div class="panel panel-primary">
 	<div class="panel-heading">Canvas</div>
-	<div class="panel-body"
-		style="min-height: 400px; max-height: 400px; overflow-y: scroll;">
-		<div ng-repeat="patient in library.patients">
-		<table >
+	<div class="panel-body" style="min-height: 30em; max-height: 30em; overflow-y: auto; overflow-x: auto;">
+		<p>Test of lab directive:</p>
+		<lab id="bg">myLab</lab>
+		<table class="table" style="min-width: 80em; max-width: 80em;">
 			<tbody>
-				<tr>
-					<td ng-repeat="category in library.categories">
+				<tr ng-repeat="patient in pm.getPatients()">
+					<td ng-repeat="category in categories">
 						<div ng-repeat="item in category.items" ng-show="item.selected"
 							ng-click="itemCtrl.setActiveItem(item)" class="component">
 							<ng-include src="'components/'+item.component"></ng-include>
@@ -15,7 +15,5 @@
 				</tr>
 			</tbody>
 		</table>
-		<br>
-		</div>
 	</div>
 </div>
