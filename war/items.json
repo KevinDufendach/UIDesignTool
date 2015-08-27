@@ -8,7 +8,7 @@
 				"id": "ID_NAME",
 				"selected": true,
 				"component": "pt_name.html",
-				"fields": 
+				"itemFields": 
 				[
 					"name_display"
 				]
@@ -19,11 +19,13 @@
 				"id": "ID_MRN",
 				"selected": true,
 				"component": "mrn.html"
+
 			},
 
 			{
 				"name": "Sex",
 				"id": "ID_SEX",
+				"selected": true,
 				"component": "sex.html"
 			}
 		]
@@ -69,7 +71,7 @@
 				"name": "Coagulation Labs",
 				"id": "LAB_COAG",
 				"component": "coags.html",
-				"fields": 
+				"itemFields": 
 				[
 					"coags_display"
 				]

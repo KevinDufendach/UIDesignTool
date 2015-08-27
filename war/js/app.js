@@ -7,14 +7,7 @@
 				
 				$scope.categories = [];
 				$scope.fields = [];
-//				$scope.myItem = "none";
-
-//				var library = this;
-//				library.categories = [];
-//				library.patients = [];
-//				library.fields = [];
-
-//				library.myitem = "none";
+//				$scope.patients = [];
 
 				$scope.pm = new PatientManager().initialize($http);
 				
