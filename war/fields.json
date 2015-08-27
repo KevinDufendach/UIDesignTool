@@ -17,5 +17,15 @@
 			{"value": "stick", "label": "Stick diagram"},
 			{"value": "list", "label": "As a list"}
 		]
+	},
+	"new_labs": {
+		"type": "Radio",
+		"label": "When are labs considered new?",
+		"value": "24",
+		"options": [
+			{"value": "6", "label": "6 hours"},
+			{"value": "12", "label": "12 hours"},
+			{"value": "24", "label": "24 hours"}
+		]
 	}
 }

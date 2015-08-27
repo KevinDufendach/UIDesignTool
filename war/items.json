@@ -64,7 +64,11 @@
 			{
 				"name": "CBC",
 				"id": "LAB_CBC",
-				"component": "cbc.html"
+				"component": "cbc.html",
+				"itemFields":
+				[
+					"new_labs"
+				]
 			},
 
 			{

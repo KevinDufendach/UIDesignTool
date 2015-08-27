@@ -7,9 +7,9 @@
 				
 				$scope.categories = [];
 				$scope.fields = [];
-//				$scope.patients = [];
+				$scope.patients = [];
 
-				$scope.pm = new PatientManager().initialize($http);
+//				$scope.pm = new PatientManager().initialize($http);
 				
 				// $http.post('/path/to/resource.json', {param: 'value'});
 				// $http.delete('/path/to/resource.json');
@@ -24,9 +24,9 @@
 					$scope.fields = data;
 				});
 
-//				$http.get('scenarios/patients.json').success(function(data) {
-//					library.patients = data;
-//				});
+				$http.get('scenarios/patients.json').success(function(data) {
+					$scope.patients = data;
+				});
 //				
 
 			} ]);
@@ -59,8 +59,7 @@
 		return {
 			restrict : 'E',
 			template : function(elem, attr) {
-				return '<span>{{pm.getLab("12345678", "' + attr.id + '")}}' + ' is of age: ' + attr.age
-				+ '</span>'
+				return '<span ng-style="patient.labs.' + attr.id +'.age < fields.new_labs.value ? labNew : labOld">{{patient.labs.' + attr.id + '.value}}</span>'
 			}
 //			templateUrl : 'lab.html'
 		};

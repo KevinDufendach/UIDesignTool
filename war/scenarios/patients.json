@@ -11,9 +11,13 @@
 
 		"labs": 
 		{
+			"cbc_hb" : { "value": 12, "age": 3},
+			"cbc_hct" : { "value": 37, "age": 8},
+			"cbc_wbc" : { "value": 4.5, "age": 16},
+			"cbc_plt" : { "value": 120, "age": 32},
 			"bg": 
 			{
-				"age": "12h",
+				"age": 12,
 				"source": "ARTERIAL",
 				"pH": "7.32",
 				"PCO2": "54",
