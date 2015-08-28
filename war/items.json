@@ -64,10 +64,12 @@
 			{
 				"name": "CBC",
 				"id": "LAB_CBC",
+				"selected": true,
 				"component": "cbc.html",
 				"itemFields":
 				[
-					"new_labs"
+					"new_labs",
+					"ital_new_labs"
 				]
 			},
 

@@ -27,5 +27,14 @@
 			{"value": "12", "label": "12 hours"},
 			{"value": "24", "label": "24 hours"}
 		]
+	},
+	"ital_new_labs": {
+		"type": "Radio",
+		"label": "Italicize new labs",
+		"value": true,
+		"options": [
+			{"value": true, "label": "yes"},
+			{"value": false, "label": "no"}
+		]
 	}
 }

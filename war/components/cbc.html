@@ -1,4 +1,6 @@
-<table id="cbc">
+<!-- hasLabValue: {{ canvasCtrl.hasLabValue(patient, ['cbc_wbc', 'cbc_hb']) }} -->
+<table id="cbc"
+	ng-show="canvasCtrl.hasLabValue(patient, ['cbc_wbc','cbc_hb','cbc_hct','cbc_plt'])">
 	<tbody>
 		<tr>
 			<td class="left_v_stick" rowspan="2"><lab id="cbc_wbc"></lab></td>

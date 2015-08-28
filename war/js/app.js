@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('library', [ 'library-items', 'ngDragDrop' ]);
+	var app = angular.module('library', [ 'library-items', 'library-canvas', 'ngDragDrop' ]);
 
 	app.controller("LibraryController", [ '$http', '$scope',
 			function($http, $scope) { // this is a controller
@@ -8,6 +8,13 @@
 				$scope.categories = [];
 				$scope.fields = [];
 				$scope.patients = [];
+				// $scope.labNew = $scope.fields.ital_new_labs.value ? {'font-style':'italic'} : {};
+//				if ($scope.fields.ital_new_labs.value) {
+//					$scope.labNew = {'font-style':'italic'};
+//				} else {
+//					$scope.labNew = {};
+//				}
+//				$scope.labNew = fields.ital_new_labs.value ? {'font-style':'italic'} : {};
 
 //				$scope.pm = new PatientManager().initialize($http);
 				
@@ -22,6 +29,7 @@
 
 				$http.get('fields.json').success(function(data) {
 					$scope.fields = data;
+					
 				});
 
 				$http.get('scenarios/patients.json').success(function(data) {
@@ -39,14 +47,6 @@
 
 	});
 
-	app.directive('componentCanvas', function() {
-		return {
-			restrict : 'E',
-			templateUrl : 'component-canvas.html'
-		};
-
-	});
-
 	app.directive('elementList', function() {
 		return {
 			restrict : 'E',
@@ -55,15 +55,7 @@
 
 	});
 
-	app.directive('lab', function() {
-		return {
-			restrict : 'E',
-			template : function(elem, attr) {
-				return '<span ng-style="patient.labs.' + attr.id +'.age < fields.new_labs.value ? labNew : labOld">{{patient.labs.' + attr.id + '.value}}</span>'
-			}
-//			templateUrl : 'lab.html'
-		};
-	});
+
 	
 })();
 
@@ -89,6 +81,12 @@ function PatientManager() {
 		return patients;
 	};
 };
+
+
+
+
+
+
 
 //
 //(function() {

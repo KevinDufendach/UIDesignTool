@@ -1,0 +1,5 @@
+<font size=5>
+<span ng-show="fields.name_display.value === 'full'">{{patient.demographics.name_last}}, {{patient.demographics.name_first}}</span>
+<span ng-show="fields.name_display.value === 'short'">{{patient.demographics.name_last}}, {{patient.demographics.name_first | limitTo : 1 : 0}} {{patient.demographics.name_middle | limitTo : 1 : 0}}</span>
+<span ng-show="fields.name_display.value === 'abbr'">{{patient.demographics.name_last | limitTo: 1: 0}}, {{patient.demographics.name_first | limitTo : 1 : 0}} {{patient.demographics.name_middle | limitTo : 1 : 0}}</span>
+</font>
