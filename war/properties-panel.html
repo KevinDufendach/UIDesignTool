@@ -1,20 +1,23 @@
-<div class="panel panel-primary properties-panel">
+<div class="panel panel-primary">
 	<div class="panel-heading">Preferences</div>
-	<h3>{{itemCtrl.activeItem.name}}</h3>
-	<div class="checkbox">
-		<label><input type="checkbox"
-			ng-model="itemCtrl.activeItem.selected" />Selected</label>
-	</div>
-	<div ng-repeat="fieldId in itemCtrl.activeItem.itemFields">
-		<table ng-init="field=fields[fieldId]">
-			<tbody>
-				<tr>
-					<td>{{field.label}}</td>
-				</tr>
-				<tr>
-					<td><ng-include src="'fields/radio.html'"></ng-include></td>
-				</tr>
-			</tbody>
-		</table>
+	<div class="properties-panel">
+		<h3>{{itemCtrl.activeItem.name}}</h3>
+		<div class="checkbox">
+			<label><input type="checkbox"
+				ng-model="itemCtrl.activeItem.selected" />Selected</label>
+		</div>
+		<div ng-repeat="fieldId in itemCtrl.activeItem.itemFields">
+			<table ng-init="field=fields[fieldId]">
+				<tbody>
+					<tr>
+						<td>{{field.label}}</td>
+					</tr>
+					<tr>
+						<td><ng-include
+								src="propertiesCtrl.getWidgetType(field.type)"></ng-include></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </div>

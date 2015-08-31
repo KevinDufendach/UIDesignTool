@@ -1,23 +1,75 @@
 (function() {
-	var app = angular.module('library', [ 'library-items', 'library-canvas', 'ngDragDrop' ]);
+	var app = angular.module('library', [ 'library-items', 'library-canvas',
+			'library-properties', 'ngDragDrop' ]);
+
+	app.filter('weeksAndDays', function() {
+		return function(number) {
+			if (isNaN(number) || number < 0) {
+				return number;
+			}
+
+			var wholeWeeks = Math.floor(number / 7);
+			var wholeDays = number % 7;
+
+			return wholeWeeks + " " + wholeDays + "/7";
+		}
+	});
+
+	app.filter('ageFilter', function() {
+		return function(number) {
+			if (isNaN(number) || number < 0) {
+				return number;
+			} else if (number < 4 * 7) {
+				return number + "d";
+			} else {
+				var wholeWeeks = Math.floor(number / 7);
+				var wholeDays = number % 7;
+
+				return wholeWeeks + " " + wholeDays + "/7w";
+			}
+		}
+	});
 
 	app.controller("LibraryController", [ '$http', '$scope',
 			function($http, $scope) { // this is a controller
 				//this.product = gem; // product is a property of controller
-				
+
 				$scope.categories = [];
 				$scope.fields = [];
 				$scope.patients = [];
-				// $scope.labNew = $scope.fields.ital_new_labs.value ? {'font-style':'italic'} : {};
-//				if ($scope.fields.ital_new_labs.value) {
-//					$scope.labNew = {'font-style':'italic'};
-//				} else {
-//					$scope.labNew = {};
-//				}
-//				$scope.labNew = fields.ital_new_labs.value ? {'font-style':'italic'} : {};
 
-//				$scope.pm = new PatientManager().initialize($http);
-				
+				$scope.calcSum = function(mainArray, arrayParameter) {
+					var total = 0;
+					for (subItem in mainArray) {
+						total += subItem[arrayParameter];
+					}
+
+					return total;
+				};
+
+				$scope.calcDOL = function(date) {
+					var magicNumber = 86400000;
+
+					if (isNaN(date)) {
+						date = new Date(date);
+					}
+
+					currentDate = new Date();
+
+					return Math.floor((currentDate - date) / magicNumber);
+
+				};
+
+				// $scope.labNew = $scope.fields.ital_new_labs.value ? {'font-style':'italic'} : {};
+				//				if ($scope.fields.ital_new_labs.value) {
+				//					$scope.labNew = {'font-style':'italic'};
+				//				} else {
+				//					$scope.labNew = {};
+				//				}
+				//				$scope.labNew = fields.ital_new_labs.value ? {'font-style':'italic'} : {};
+
+				//				$scope.pm = new PatientManager().initialize($http);
+
 				// $http.post('/path/to/resource.json', {param: 'value'});
 				// $http.delete('/path/to/resource.json');
 
@@ -29,23 +81,32 @@
 
 				$http.get('fields.json').success(function(data) {
 					$scope.fields = data;
-					
+
 				});
 
 				$http.get('scenarios/patients.json').success(function(data) {
 					$scope.patients = data;
 				});
-//				
+
+				$scope.getItemsByCategory = function(categoryName) {
+					for (cat in categories) {
+						if (cat.category === categoryName) {
+							return cat;
+						}
+					}
+
+					return null;
+				};
 
 			} ]);
 
-	app.directive('propertiesPanel', function() {
-		return {
-			restrict : 'E',
-			templateUrl : 'properties-panel.html'
-		};
-
-	});
+	//	app.directive('propertiesPanel', function() {
+	//		return {
+	//			restrict : 'E',
+	//			templateUrl : 'properties-panel.html'
+	//		};
+	//
+	//	});
 
 	app.directive('elementList', function() {
 		return {
@@ -55,38 +116,30 @@
 
 	});
 
-
-	
 })();
 
 // Define the skeleton PatientManager
 function PatientManager() {
 	this.patients = [];
 	this.selectedPt = "";
-	
-	this.initialize = function ($http) {
+
+	this.initialize = function($http) {
 		$http.get('scenarios/patients.json').success(function(data) {
 			this.patients = data;
-			
+
 		});
-		
+
 		return this;
 	};
-	
+
 	this.getLab = function(patientId, labId) {
 		return patients[patientId].labs[labId]; // TODO: add default value resolution 
 	};
-	
+
 	this.getPatients = function() {
 		return patients;
 	};
 };
-
-
-
-
-
-
 
 //
 //(function() {

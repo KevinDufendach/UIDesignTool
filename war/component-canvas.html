@@ -1,16 +1,36 @@
 <div class="panel panel-primary">
 	<div class="panel-heading">Canvas</div>
-	<div class="panel-body" style="min-height: 30em; max-height: 30em; overflow-y: auto; overflow-x: auto;">
+	<div class="panel-body" class="component-canvas">
 		<table class="table" style="min-width: 80em; max-width: 80em;">
 			<tbody>
 				<tr ng-repeat="patient in patients">
-					<td ng-repeat="category in categories">
-						<div ng-repeat="item in category.items" ng-show="item.selected"
-							ng-click="itemCtrl.setActiveItem(item)" class="component">
-							<ng-include src="'components/'+item.component"></ng-include>
+					<td>
+<!-- 						<div>{{fields.categories}}</div> -->
+<!-- 						<div>{{getItemsByCategory("Identifiers")}}</div> -->
+						<div ng-repeat="category in 	categories">
+<!-- 						<div ng-init="category = getItemsByCategory(categoryName)"> -->
+							<div ng-show="category.orientation == 'horizontal'" class="component-box-horizontal">
+								<div ng-repeat="item in category.items" ng-show="item.selected"
+									ng-click="itemCtrl.setActiveItem(item)" class="component componentHorizontal">
+									<ng-include src="'components/'+item.component"></ng-include>
+								</div>
+							</div>
+							<div ng-hide="category.orientation == 'horizontal'" class="component-box-vertical">
+								<div ng-repeat="item in category.items" ng-show="item.selected"
+									ng-click="itemCtrl.setActiveItem(item)" class="component componentVertical">
+									<ng-include src="'components/'+item.component"></ng-include>
+								</div>
+							</div>
+
+<!-- 						</div> -->
 						</div>
-<!-- 						hasLabValue: {{ canvasCtrl.hasLabValue(['cbc_wbc','cbc_hb','cbc_hct','cbc_plt']) }} -->
 					</td>
+					<!-- 					<td ng-repeat="category in categories"> -->
+					<!-- 						<div ng-repeat="item in category.items" ng-show="item.selected" -->
+					<!-- 							ng-click="itemCtrl.setActiveItem(item)" class="component"> -->
+					<!-- 							<ng-include src="'components/'+item.component"></ng-include> -->
+					<!-- 						</div> 						hasLabValue: {{ canvasCtrl.hasLabValue(['cbc_wbc','cbc_hb','cbc_hct','cbc_plt']) }} -->
+					<!-- 					</td> -->
 				</tr>
 			</tbody>
 		</table>

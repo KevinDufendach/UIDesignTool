@@ -1,0 +1,50 @@
+<!-- {{fields.fluid_components.options}} -->
+<table class="small-padding-table">
+	<tbody>
+		<tr>
+			<th ng-show="fields.fluid_components.options.route.value">route</th>
+			<th ng-show="fields.fluid_components.options.content.value">content</th>
+			<th ng-show="fields.fluid_components.options.rate.value" data-toggle="tooltip" title="mL/hr">rate</th>
+			<th ng-show="fields.fluid_components.options.dose.value">dose</th>
+			<th ng-show="fields.fluid_components.options.gir.value">GIR</th>
+			<th ng-show="fields.fluid_components.options.na.value">Na</th>
+			<th ng-show="fields.fluid_components.options.k.value">K</th>
+			<th ng-show="fields.fluid_components.options.ca.value">Ca</th>
+			<th ng-show="fields.fluid_components.options.p.value">P</th>
+			<th ng-show="fields.fluid_components.options.cl.value">Cl</th>
+			<th ng-show="fields.fluid_components.options.acetate.value">Acet</th>
+			<th ng-show="fields.fluid_components.options.aa.value"><span data-toggle="tooltip" title="g/kg/day">AA</span></th>
+			<th ng-show="fields.fluid_components.options.volume.value"><span data-toggle="tooltip" title="mL/kg/day">mL/kg</span></th>
+		</tr>
+		<tr ng-repeat="fluid in patient.ivfluids">
+			<td ng-show="fields.fluid_components.options.route.value">{{::fluid.route}}</td>
+			<td ng-show="fields.fluid_components.options.content.value">{{::fluid.content}}</td>
+			<td ng-show="fields.fluid_components.options.rate.value" data-toggle="tooltip" title="mL/hr">{{::fluid.rate | number:1}}</td>
+			<td ng-show="fields.fluid_components.options.dose.value">{{::fluid.concentration * fluid.rate / patient.vitals.wt / 60 | number:1}}</td>
+			<td ng-show="fields.fluid_components.options.gir.value">{{::fluid.dextrose * fluid.rate / (patient.vitals.wt * 6) | number:1}}</td>
+			<td ng-show="fields.fluid_components.options.na.value">{{::fluid.Na * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+			<td ng-show="fields.fluid_components.options.k.value">{{::fluid.K * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+			<td ng-show="fields.fluid_components.options.ca.value">{{::fluid.Ca * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+			<td ng-show="fields.fluid_components.options.p.value">{{::fluid.P * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+			<td ng-show="fields.fluid_components.options.cl.value">{{::fluid.Cl * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+			<td ng-show="fields.fluid_components.options.acetate.value">{{::fluid.Acetate * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+			<td ng-show="fields.fluid_components.options.aa.value">{{::fluid.AA * fluid.rate * 24 / patient.vitals.wt / 1000 | number:1}}</td>
+			<td ng-show="fields.fluid_components.options.volume.value" data-toggle="tooltip" title="mL/kg/day">{{::fluid.rate * 24 / patient.vitals.wt | number:0}}</td>
+		</tr>
+<!-- 		<tr ng-show="fields.fluid_components.options.total.value"> -->
+<!-- 			<td ng-show="fields.fluid_components.options.route.value"></td> -->
+<!-- 			<td ng-show="fields.fluid_components.options.content.value">total</td> -->
+<!-- 			<td ng-show="fields.fluid_components.options.rate.value" data-toggle="tooltip" title="mL/hr">{{::calcSum(patient.ivfluids, "rate")}}</td> -->
+<!-- 			<td ng-show="fields.fluid_components.options.dose.value"></td> -->
+<!-- 			<td ng-show="fields.fluid_components.options.gir.value"></td> -->
+<!-- 			<td ng-show="fields.fluid_components.options.na.value"></td> -->
+<!-- 			<td ng-show="fields.fluid_components.options.k.value"></td> -->
+<!-- 			<td ng-show="fields.fluid_components.options.ca.value"></td> -->
+<!-- 			<td ng-show="fields.fluid_components.options.p.value"></td> -->
+<!-- 			<td ng-show="fields.fluid_components.options.cl.value"></td> -->
+<!-- 			<td ng-show="fields.fluid_components.options.acetate.value"></td> -->
+<!-- 			<td ng-show="fields.fluid_components.options.aa.value"></td> -->
+<!-- 			<td ng-show="fields.fluid_components.options.volume.value" data-toggle="tooltip" title="mL/kg/day">{{::calcSum(patient.ivFluids, "rate") * 24 / patient.vitals.wt | number:0}}</td> -->
+<!-- 		</tr> -->
+	</tbody>
+</table>

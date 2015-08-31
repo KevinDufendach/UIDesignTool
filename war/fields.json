@@ -1,6 +1,7 @@
 {
+	"categories": [ "Identifiers", "Status", "FEN", "Labs"	],
 	"name_display": {
-		"type": "Radio",
+		"type": "radio",
 		"label": "How should the name be displayed?",
 		"value": "full",
 		"options": [
@@ -10,7 +11,7 @@
 		]
 	},
 	"coags_display": {
-		"type": "Radio",
+		"type": "radio",
 		"label": "How should coagulation labs be displayed?",
 		"value": "stick",
 		"options": [
@@ -19,7 +20,7 @@
 		]
 	},
 	"new_labs": {
-		"type": "Radio",
+		"type": "radio",
 		"label": "When are labs considered new?",
 		"value": "24",
 		"options": [
@@ -29,12 +30,45 @@
 		]
 	},
 	"ital_new_labs": {
-		"type": "Radio",
+		"type": "radio",
 		"label": "Italicize new labs",
 		"value": true,
 		"options": [
 			{"value": true, "label": "yes"},
 			{"value": false, "label": "no"}
 		]
+	},
+	"coag_components": {
+		"type": "checkbox",
+		"label": "Which labs (if available) should appear with coags?",
+		"options": {
+			"PT" : {"value": true, "label": "PT"},
+			"PTT" : {"value": true, "label": "PTT"},
+			"INR" : {"value": true, "label": "INR"},
+			"FIBRINOGEN": {"value": false, "label": "Fibrinogen"},
+			"DDIMER": {"value": false, "label": "D-dimer"},
+			"HEPASSAY": {"value": false, "label": "Hep assay"}
+		}
+	},
+	"fluid_components": {
+		"type": "checkbox",
+		"label": "Which fluid components (if available) should appear in the fluids table?",
+		"options": {
+			"route": {"value": true, "label": "Route"},
+			"content": {"value": true, "label": "Content"},
+			"rate": {"value": true, "label": "Rate (mL/hr)"},
+			"dose": {"value": true, "label": "Medication dose (units/kg/min)"},
+			"gir": {"value": false, "label": "GIR"},
+			"na": {"value": false, "label": "Na (meq/kg/d)"},
+			"k": {"value": false, "label": "K (meq/kg/d)"},
+			"ca": {"value": false, "label": "Ca (meq/kg/d)"},
+			"p": {"value": false, "label": "Phos (meq/kg/d)"},
+			"cl": {"value": false, "label": "Chloride (meq/kg/d)"},
+			"acetate": {"value": false, "label": "Acetate (meq/kg/d)"},
+			"aa": {"value": false, "label": "AA (g/kg/d)"},
+			"volume": {"value": true, "label": "Volume (mL/kg/d)"},
+			"total": {"value": true, "label": "Total volume (mL/kg/d)"}
+		}
 	}
+
 }

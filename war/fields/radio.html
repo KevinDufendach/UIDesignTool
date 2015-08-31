@@ -1,16 +1,3 @@
-<div ng-repeat="option in field.options">
-  &nbsp;<label><input type="radio" name="{{fieldId}}" ng-value="option.value" ng-model="field.value" />{{option.label}}</label>
+<div ng-repeat="option in field.options" class="radio">
+<label><input type="radio" name="{{fieldId}}" ng-value="option.value" ng-model="field.value" />{{option.label}}</label>
 </div>
-
-
-<!-- <form novalidate> -->
-<!-- 	<input type="radio"  -->
-	
-<!-- 	First Name:<br> <input type="text" ng-model="user.firstName"><br> -->
-<!-- 	Last Name:<br> <input type="text" ng-model="user.lastName"> -->
-<!-- 	Options:<br> <label ng-repeat="opt in field.options"> -->
-<!-- 	</label><input type="radio" ng-model="opt" ng-value="opt"></input>{{opt}}</label>	 -->
-<!-- 	<br> -->
-<!-- 	<br> -->
-<!-- 	<button ng-click="reset()">RESET</button> -->
-<!-- </form> -->

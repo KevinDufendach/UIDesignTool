@@ -1,34 +1,65 @@
 <!-- <div ng-show="library.fields.name_display.value === 'full'">{{patient.demographics.name_last}}, {{patient.demographics.name_first}}</div> -->
 <!-- <div ng-show="library.fields.name_display.value === 'short'">{{patient.demographics.name_last}}, {{patient.demographics.name_first | limitTo : 1 : 0}} {{patient.demographics.name_middle | limitTo : 1 : 0}}</div> -->
 <!-- <div ng-show="library.fields.name_display.value === 'abbr'">{{patient.demographics.name_last | limitTo: 1: 0}}, {{patient.demographics.name_first | limitTo : 1 : 0}} {{patient.demographics.name_middle | limitTo : 1 : 0}}</div> -->
-<div ng-show="fields.coags_display.value === 'stick'">
-	<table id="coags">
-		<tbody>
-			<tr>
-				<td style="border-right: thin solid black" width="50%">PT</td>
-				<td width="50%">PTT</td>
-			</tr>
-			<tr>
-				<td class="lower_v_stick" colspan=2>INR</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-<div ng-show="fields.coags_display.value === 'list'">
-	<table>
-		<tbody>
-			<tr>
-				<td>PT:</td>
-				<td>[PT]</td>
-			</tr>
-			<tr>
-				<td>PTT:</td>
-				<td>[PTT]</td>
-			</tr>
-			<tr>
-				<td>INR:</td>
-				<td>[INR]</td>
-			</tr>
-		</tbody>
-	</table>
+
+<div
+	ng-show="canvasCtrl.hasLabValue(patient, ['PT','PTT','INR','DDIMER','FIBRINOGEN','HEPASSAY'])">
+	<div ng-show="fields.coags_display.value === 'stick'">
+		<table style="table-layout: fixed">
+			<tbody>
+				<tr>
+					<td style="border-right: thin solid black" width="50%"><lab
+							ng-show="fields.coag_components.options.PT.value" id="PT"></lab></td>
+					<td width="50%"><lab
+							ng-show="fields.coag_components.options.PTT.value" id="PTT"></lab></td>
+				</tr>
+				<tr>
+					<td class="lower_v_stick" colspan=2><lab
+							ng-show="fields.coag_components.options.INR.value" id="INR"></lab></td>
+				</tr>
+				<tr ng-show="fields.coag_components.options.FIBRINOGEN.value">
+					<td>F:</td>
+					<td><lab id="FIBRINOGEN"></lab></td>
+				</tr>
+				<tr ng-show="fields.coag_components.options.DDIMER.value">
+					<td>ddim:</td>
+					<td><lab id="DDIMER"></lab></td>
+				</tr>
+				<tr ng-show="fields.coag_components.options.HEPASSAY.value">
+					<td>HA:</td>
+					<td><lab id="HEPASSAY"></lab></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div ng-show="fields.coags_display.value === 'list'">
+		<table>
+			<tbody>
+				<tr ng-show="fields.coag_components.options.PT.value">
+					<td>PT:</td>
+					<td><lab id="PT"></lab></td>
+				</tr>
+				<tr ng-show="fields.coag_components.options.PTT.value">
+					<td>PTT:</td>
+					<td><lab id="PTT"></lab></td>
+				</tr>
+				<tr ng-show="fields.coag_components.options.INR.value">
+					<td>INR:</td>
+					<td><lab id="INR"></lab></td>
+				</tr>
+				<tr ng-show="fields.coag_components.options.FIBRINOGEN.value">
+					<td>F:</td>
+					<td><lab id="FIBRINOGEN"></lab></td>
+				</tr>
+				<tr ng-show="fields.coag_components.options.DDIMER.value">
+					<td>INR:</td>
+					<td><lab id="DDIMER"></lab></td>
+				</tr>
+				<tr ng-show="fields.coag_components.options.HEPASSAY.value">
+					<td>INR:</td>
+					<td><lab id="HEPASSAY"></lab></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>

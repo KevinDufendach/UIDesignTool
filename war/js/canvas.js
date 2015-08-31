@@ -30,6 +30,16 @@
 					return false;
 				};
 				
+				this.getItemsByCategory = function(categoryName) {
+					for (cat in categories) {
+						if (cat.category === categoryName) {
+							return cat;
+						}
+					}
+					
+					return null;
+				};
+				
 			},
 			controllerAs: "canvasCtrl"
 				

@@ -1,6 +1,7 @@
 [
 	{
 		"category": "Identifiers",
+		"orientation": "horizontal",
 		"items": 
 		[
 			{
@@ -27,6 +28,13 @@
 				"id": "ID_SEX",
 				"selected": true,
 				"component": "sex.html"
+			},
+			
+			{
+				"name": "Birth date",
+				"id": "ID_BIRTH_DATE",
+				"selected": true,
+				"component": "birthdate.html"
 			}
 		]
 	},
@@ -38,7 +46,24 @@
 			{
 				"name": "Age and Weight",
 				"id": "STATUS_AGE_WEIGHT",
+				"selected": true,
 				"component": "age_weight.html"
+			}
+		]
+	},
+	{
+		"category": "FEN",
+		"items":
+		[
+			{
+				"name": "Lines and Fluids",
+				"id": "STATUS_LINES_FLUIDS",
+				"selected": true,
+				"component": "fluids.html",
+				"itemFields":
+				[
+					"fluid_components"
+				]
 			}
 		]
 	},
@@ -79,7 +104,10 @@
 				"component": "coags.html",
 				"itemFields": 
 				[
-					"coags_display"
+					"coags_display",
+					"coag_components",
+					"new_labs",
+					"ital_new_labs"
 				]
 			}
 		]

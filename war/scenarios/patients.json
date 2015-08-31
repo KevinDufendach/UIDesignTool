@@ -3,10 +3,19 @@
 	{
 		"demographics": 
 		{
+			"id": "12345678",
 			"name_first": "Curious",
 			"name_last": "George",
 			"name_middle": "Monkey",
-			"sex": "male"
+			"sex": "male",
+			"birthdate": "2015-08-12",
+			"gestation": 227
+		},
+		
+		"vitals":
+		{
+			"birthweight": 2.1,
+			"wt": 2.3
 		},
 
 		"labs": 
@@ -21,16 +30,64 @@
 			"BG_PO2": { "value": 72, "age": 7},
 			"BG_HCO3": { "value": 21, "age": 7},
 			"BG_BE": { "value": -1.2, "age": 7}
-		}
+		},
+		
+		"lines":
+		{
+			"PICC" : { "age": "3d"},
+			"UAC" : { "age": "6d"},
+			"IV" : { "age": "2d"}
+		},
+		
+		"ivfluids":
+		[
+			{
+				"route": "PICC",
+				"content": "TPN",
+				"rate": 11.5,
+				"dextrose": 7.2,
+				"AA": 33,
+				"Na": 30,
+				"K": 15,
+				"Ca": 15,
+				"P": 7,
+				"Acetate": 10,
+				"Cl": 35
+			},
+			{
+				"route": "PICC",
+				"content": "DA",
+				"rate": 0.43,
+				"concentration": 1600,
+				"units": "mcg",
+				"dextrose": 5
+			},
+			{
+				"route": "UAC",
+				"content": "1/2 NaAcet",
+				"rate": 0.5,
+				"Na": 77,
+				"Acetate": 77
+			}
+		]
 	},
 
 	"87654321": 
 	{
 		"demographics": 
 		{
+			"id": "87654321",
 			"name_first": "Snappy",
 			"name_last": "Appel",
-			"sex": "female"
+			"sex": "female",
+			"birthdate": "2015-04-02",
+			"gestation": 187
+		},
+		
+		"vitals":
+		{
+			"birthweight": 0.73,
+			"wt": 2.56
 		},
 
 		"labs": 
@@ -40,18 +97,65 @@
 			"BG_PCO2": { "value": 54, "age": 14},
 			"BG_PO2": { "value": 72, "age": 14},
 			"BG_HCO3": { "value": 21, "age": 14},
-			"BG_BE": { "value": -1.2, "age": 14}
-		}
+			"BG_BE": { "value": -1.2, "age": 14},
+			"PT": { "value": 16, "age": 14},
+			"PTT": { "value": 47, "age": 14},
+			"INR": { "value": 1.1, "age": 14},
+			"DDIMER": { "value": 0.01, "age": 14},
+			"FIBRINOGEN": { "value": 263, "age": 14},
+			"HEPASSAY": { "value": 0.4, "age": 14}
+		},
+		
+		"enteralfluids":
+		[
+			{
+				"route": "Enteral",
+				"content": "EBM",
+				"rate": 11.5,
+				"dextrose": 7.2,
+				"AA": 33,
+				"Na": 30,
+				"K": 15,
+				"Ca": 15,
+				"P": 7,
+				"Acetate": 10,
+				"Cl": 35
+			},
+			{
+				"route": "PICC",
+				"content": "DA",
+				"rate": 0.43,
+				"concentration": 1600,
+				"units": "mcg",
+				"dextrose": 5
+			},
+			{
+				"route": "UAC",
+				"content": "1/2 NaAcet",
+				"rate": 0.5,
+				"Na": 77,
+				"Acetate": 77
+			}
+		]
 	},
 
 	"18273654": 
 	{
 		"demographics": 
 		{
+			"id": "18273654",
 			"name_first": "Isabella",
 			"name_middle": "Betty",
 			"name_last": "Cannulated",
-			"sex": "female"
+			"sex": "female",
+			"birthdate": "2015-08-23",
+			"gestation": 243
+		},
+		
+		"vitals":
+		{
+			"birthweight": 3.4,
+			"wt": 3.76
 		},
 
 		"labs": 
