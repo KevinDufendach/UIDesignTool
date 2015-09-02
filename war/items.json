@@ -70,6 +70,10 @@
 
 	{
 		"category": "Labs",
+		"itemFields": [
+			"new_labs",
+			"ital_new_labs"
+		],
 		"items": 
 		[
 			{
@@ -90,12 +94,7 @@
 				"name": "CBC",
 				"id": "LAB_CBC",
 				"selected": true,
-				"component": "cbc.html",
-				"itemFields":
-				[
-					"new_labs",
-					"ital_new_labs"
-				]
+				"component": "cbc.html"
 			},
 
 			{

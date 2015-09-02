@@ -115,6 +115,25 @@
 		};
 
 	});
+	
+	//////////////// ngDragDrop Demo
+	app.controller('oneCtrl', function($scope) {
+		  $scope.list1 = [
+		    { 'title': 'L', 'drag': true },
+		    { 'title': 'O', 'drag': true },
+		    { 'title': 'M', 'drag': true },
+		    { 'title': 'L', 'drag': true },
+		    { 'title': 'G', 'drag': true },
+		    { 'title': 'U', 'drag': true }
+		  ];
+
+		  this.dropCallback = function(event, ui, title, $index) {
+		    if ($scope.list1.map(function(item) { return item.title; }).join('') === 'GOLLUM') {
+		      $scope.list1.forEach(function(value, key) { $scope.list1[key].drag = false; });
+		    }
+		  };
+		});
+	
 
 })();
 

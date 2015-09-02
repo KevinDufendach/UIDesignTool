@@ -1,14 +1,11 @@
 <div class="panel panel-primary">
 	<div class="panel-heading">Canvas</div>
-	<div class="panel-body" class="component-canvas">
+	<div class="panel-body component-canvas">
 		<table class="table" style="min-width: 80em; max-width: 80em;">
 			<tbody>
 				<tr ng-repeat="patient in patients">
 					<td>
-<!-- 						<div>{{fields.categories}}</div> -->
-<!-- 						<div>{{getItemsByCategory("Identifiers")}}</div> -->
 						<div ng-repeat="category in 	categories">
-<!-- 						<div ng-init="category = getItemsByCategory(categoryName)"> -->
 							<div ng-show="category.orientation == 'horizontal'" class="component-box-horizontal">
 								<div ng-repeat="item in category.items" ng-show="item.selected"
 									ng-click="itemCtrl.setActiveItem(item)" class="component componentHorizontal">
@@ -21,8 +18,6 @@
 									<ng-include src="'components/'+item.component"></ng-include>
 								</div>
 							</div>
-
-<!-- 						</div> -->
 						</div>
 					</td>
 					<!-- 					<td ng-repeat="category in categories"> -->

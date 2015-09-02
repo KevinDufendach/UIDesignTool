@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html ng-app="library">
 <head>
-<!-- <link rel="stylesheet" type="text/css" -->
-<!-- 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" /> -->
 <link rel="stylesheet" type="text/css"
 	href="css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="css/bootstrap-theme.min.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script> -->
 <title>User Interface Design Tool - Powered by Vanderbilt</title>
 
 </head>
-<body>
 <body>
 	<div ng-include="'navbar.html'"></div>
 	<div class="container-fluid"
@@ -29,20 +27,34 @@
 				</div>
 			</div>
 		</div>
-			<span>{{labNew = fields.ital_new_labs.value ? {'font-style':'italic'} : {} }}</span>
+		<span>{{labNew = fields.ital_new_labs.value ? {'font-style':'italic'} : {} }}</span>
+		
 	</div>
 
+<!-- 	<h2> -->
+<!-- 		Whose dialog is it? <em>"What is it, Precious? What is it?"</em> -->
+<!-- 	</h2> -->
+<!-- 	<div ng-controller="oneCtrl as loki"> -->
+<!-- 		<div class='contentWrapper ng-cloak'> -->
+<!-- 			<div class='content'> -->
+<!-- 				<div class="row-fluid"> -->
+<!-- 					<ul class="thumbnails"> -->
+<!-- 						<li ng-repeat="item in list1" data-drop="true" ng-model='list1' -->
+<!-- 							jqyoui-droppable="{index: {{$index}}, onDrop:'loki.dropCallback(item.title, $index)'}"> -->
+<!-- 							<div class="thumbnail" data-drag="{{item.drag}}" -->
+<!-- 								data-jqyoui-options="{revert: 'invalid'}" ng-model="list1" -->
+<!-- 								jqyoui-draggable="{index: {{$index}},animate:true}"> -->
+<!-- 								<h1>{{item.title}}</h1> -->
+<!-- 							</div> -->
+<!-- 						</li> -->
+<!-- 					</ul> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
 
 
-<!-- 	<input type="button" value="set italic" ng-click="labNew={'font-style':'italic'}"> -->
-<!-- 	<input type="button" value="set background"	ng-click="labNew={'background-color':'blue'}"> -->
-<!-- 	<input type="button" value="clear" ng-click="labNew={}"> -->
-<!-- 	<br /> -->
-<!-- 	<span ng-style="labNew">Sample Text</span> -->
-<!-- 	<pre>labNew={{labNew}}</pre> -->
-
-
-	<script src="/js/jquery-1.11.3.min.js"></script>
+<!-- 	<script src="/js/jquery-1.11.3.min.js"></script> -->
 	<script src="/js/angular.min.js"></script>
 	<script src="/js/angular-dragdrop.min.js"></script>
 	<script src="/js/checklist-model.js"></script>

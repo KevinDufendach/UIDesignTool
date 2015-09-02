@@ -7,17 +7,9 @@
 				ng-model="itemCtrl.activeItem.selected" />Selected</label>
 		</div>
 		<div ng-repeat="fieldId in itemCtrl.activeItem.itemFields">
-			<table ng-init="field=fields[fieldId]">
-				<tbody>
-					<tr>
-						<td>{{field.label}}</td>
-					</tr>
-					<tr>
-						<td><ng-include
-								src="propertiesCtrl.getWidgetType(field.type)"></ng-include></td>
-					</tr>
-				</tbody>
-			</table>
+			<div ng-init="field=fields[fieldId]">
+				<h4>{{field.label}}</h4>
+				<ng-include src="propertiesCtrl.getWidgetType(field.type)"></ng-include>
+			</div>
 		</div>
 	</div>
-</div>

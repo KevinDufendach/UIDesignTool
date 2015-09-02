@@ -119,7 +119,6 @@
 }
 
 .component-canvas {
-	background-color:#FFeeee;
 	min-height: 30em;
 	max-height: 30em;
 	overflow-y: auto;
@@ -159,3 +158,29 @@
 	font-size: x-small;
 }
 
+
+/* .thumbnail { */
+/* 	height: 50px; */
+/* 	width: 50px; */
+/* 	text-align: center; */
+/* 	padding-top: 0px; */
+/* 	transition: none; */
+/* 	-webkit-transition: none; */
+/* 	-moz-transition: none; */
+/* 	-o-transition: none; */
+/* 	cursor: pointer; */
+/* 	background: rgb(182, 173, 123); */
+/* } */
+
+/* .thumbnail[data-drag="false"] { */
+/* 	background: green; */
+/* } */
+
+/* li { */
+/* 	height: 56px; */
+/* 	width: 60px; */
+/* 	line-height: 20px; */
+/* 	border: 1px solid #ddd; */
+/* 	padding: 3px; */
+/* 	margin-left: 10px; */
+/* } */

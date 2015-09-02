@@ -69,6 +69,10 @@
 			"volume": {"value": true, "label": "Volume (mL/kg/d)"},
 			"total": {"value": true, "label": "Total volume (mL/kg/d)"}
 		}
-	}
+	},
+	"lab_group": [
+		"ital_new_labs",
+		"new_labs"
+	]
 
 }
