@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html ng-app="demo">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>Angular-toggle-switch by cgarvis</title>
+
+<!-- Default toggle css -->
+<link rel="stylesheet" href="/css/angular-toggle-switch.css">
+
+<!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"> -->
+</head>
 <body>
-<!-- 	<div ng-init="myVar = 12"> -->
-	<div ng-init="myVar = 12">
-	{{myVar + 3}}
+	<div class="wrapper">
+		<p>Switch Value: {{switchState}}</p>
+
+		<toggle-switch ng-model="switchState"></toggle-switch>
 	</div>
 	<script src="/js/angular.min.js"></script>
+	<script src="/js/angular-switch-demo.js"></script>
+
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/angular-toggle-switch.min.js"></script>
 </body>
 </html>

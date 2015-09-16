@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="library">
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script> -->
+<title>User Interface Design Tool - Powered by Vanderbilt</title>
+
+</head>
+
+<body ng-controller="LibraryController as library">
+	<div ng-include="'navbar.html'"></div>
+	<div style="display: none">{{labNew = fields.ital_new_labs.value
+		? {'font-style':'italic'} : {} }}</div>
+	<div ng-controller="ItemController as itemCtrl" style="height: 100%">
+		<div ng-show="library.layout === 0" style="height: 100%">
+			<div class="panel-wrapper">
+				<div class="panel-center">
+					<div class="container-fluid">
+						<component-canvas></component-canvas>
+					</div>
+				</div>
+				<div class="panel-south">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-6 col-md-4">
+								<properties-panel></properties-panel>
+							</div>
+							<div class="col-sm-6 col-md-8">
+								<element-list></element-list>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div ng-show="library.layout === 1" style="height: 100%">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="panel-wrapper">
+						<div class="col-sm-9 col-md-8">
+							<div class="panel-center">
+								<component-canvas></component-canvas>
+							</div>
+							<div class="panel-south">
+								<element-list></element-list>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 col-md-4">
+						<properties-panel></properties-panel>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	</div>
+
+	</div>
+
+	<!-- 	<h2> -->
+	<!-- 		Whose dialog is it? <em>"What is it, Precious? What is it?"</em> -->
+	<!-- 	</h2> -->
+	<!-- 	<div ng-controller="oneCtrl as loki"> -->
+	<!-- 		<div class='contentWrapper ng-cloak'> -->
+	<!-- 			<div class='content'> -->
+	<!-- 				<div class="row-fluid"> -->
+	<!-- 					<ul class="thumbnails"> -->
+	<!-- 						<li ng-repeat="item in list1" data-drop="true" ng-model='list1' -->
+	<!-- 							jqyoui-droppable="{index: {{$index}}, onDrop:'loki.dropCallback(item.title, $index)'}"> -->
+	<!-- 							<div class="thumbnail" data-drag="{{item.drag}}" -->
+	<!-- 								data-jqyoui-options="{revert: 'invalid'}" ng-model="list1" -->
+	<!-- 								jqyoui-draggable="{index: {{$index}},animate:true}"> -->
+	<!-- 								<h1>{{item.title}}</h1> -->
+	<!-- 							</div> -->
+	<!-- 						</li> -->
+	<!-- 					</ul> -->
+	<!-- 				</div> -->
+	<!-- 			</div> -->
+	<!-- 		</div> -->
+	<!-- 	</div> -->
+
+
+	<!-- 	<script src="/js/jquery-1.11.3.min.js"></script> -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="/js/angular-toggle-switch.min.js"></script>
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/angular-dragdrop.min.js"></script>
+	<script src="/js/checklist-model.js"></script>
+	<script src="/js/app.js"></script>
+	<script src="/js/items.js"></script>
+	<script src="/js/canvas.js"></script>
+	<script src="/js/properties.js"></script>
+	<!-- 	</div> -->
+</body>
+</html>

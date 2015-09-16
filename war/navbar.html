@@ -1,15 +1,15 @@
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-static-top" >
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<a class="navbar-brand" href="#">User Interface Design Tool</a>
 		</div>
 		<div>
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Page 1</a></li>
-				<li><a href="#">Page 2</a></li>
-				<li><a href="#">Page 3</a></li>
+				<li ng-class="{active : library.layout === 0}"><a href ng-click="library.layout = 0">Design 0 {{library.layout}}</a></li>
+				<li ng-class="{active : library.layout === 1}"><a href ng-click="library.layout = 1">Design 1</a></li>
+				<li class="disabled"><a href="#">Design 3</a></li>
+				<li class="navbar-text">This is some text [{{library.layout}}]</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>

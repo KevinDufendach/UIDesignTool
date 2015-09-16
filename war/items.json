@@ -94,7 +94,12 @@
 				"name": "CBC",
 				"id": "LAB_CBC",
 				"selected": true,
-				"component": "cbc.html"
+				"component": "cbc.html",
+				"itemFields": 
+				[
+					"new_labs",
+					"ital_new_labs"
+				]
 			},
 
 			{

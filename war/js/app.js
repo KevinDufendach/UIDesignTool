@@ -1,6 +1,6 @@
 (function() {
-	var app = angular.module('library', [ 'library-items', 'library-canvas',
-			'library-properties', 'ngDragDrop' ]);
+	var app = angular.module('library', ['library-items', 'library-canvas',
+			'library-properties', 'toggle-switch']);
 
 	app.filter('weeksAndDays', function() {
 		return function(number) {
@@ -37,6 +37,7 @@
 				$scope.categories = [];
 				$scope.fields = [];
 				$scope.patients = [];
+				this.layout = 1;
 
 				$scope.calcSum = function(mainArray, arrayParameter) {
 					var total = 0;
@@ -45,6 +46,14 @@
 					}
 
 					return total;
+				};
+				
+				$scope.toggle = function( obj , varName ) {
+					obj[varName] = !obj[varName];
+				};
+				
+				$scope.setLayout = function(index) {
+					this.layout = index;
 				};
 
 				$scope.calcDOL = function(date) {
@@ -59,6 +68,8 @@
 					return Math.floor((currentDate - date) / magicNumber);
 
 				};
+				
+				
 
 				// $scope.labNew = $scope.fields.ital_new_labs.value ? {'font-style':'italic'} : {};
 				//				if ($scope.fields.ital_new_labs.value) {

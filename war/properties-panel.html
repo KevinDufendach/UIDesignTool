@@ -1,11 +1,14 @@
 <div class="panel panel-primary">
 	<div class="panel-heading">Preferences</div>
-	<div class="properties-panel">
-		<h3>{{itemCtrl.activeItem.name}}</h3>
-		<div class="checkbox">
-			<label><input type="checkbox"
-				ng-model="itemCtrl.activeItem.selected" />Selected</label>
+	<div class="panel-body properties-panel">
+		<div>
+			<div class="pull-right" style="vertical-align: bottom">
+				<toggle-switch ng-model="itemCtrl.activeItem.selected" knob-label="status"></toggle-switch>
+			</div>
+			<h3>{{itemCtrl.activeItem.name}}</h3>
 		</div>
+		
+		
 		<div ng-repeat="fieldId in itemCtrl.activeItem.itemFields">
 			<div ng-init="field=fields[fieldId]">
 				<h4>{{field.label}}</h4>
@@ -13,3 +16,4 @@
 			</div>
 		</div>
 	</div>
+</div>

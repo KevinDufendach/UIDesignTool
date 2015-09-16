@@ -32,7 +32,7 @@
 	"ital_new_labs": {
 		"type": "radio",
 		"label": "Italicize new labs",
-		"value": true,
+		"value": false,
 		"options": [
 			{"value": true, "label": "yes"},
 			{"value": false, "label": "no"}
