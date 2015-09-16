@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="fhir">
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" href="/css/angular-toggle-switch.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FHIR Test</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/js/angular.min.js"></script>
+<script src="/js/fhir-client.js"></script>
+
+<script>
+// 	var demo = {
+// 		serviceUrl : "https://fhir-open-api.smarthealthit.org",
+// 		patientId : "1137192"
+// 	};
+
+// 	// Create a FHIR client (server URL, patient id in `demo`)
+// 	var smart = FHIR.client(demo);
+// 	var pt = smart.context.patient;
+
+// 	// Create a patient banner by fetching + rendering demographics
+// 	pt.read().then(function(p) {
+// 		var name = p.name[0];
+// 		var formatted = name.given.join(" ") + " " + name.family;
+// 		$("#patient_name").text(formatted);
+// 	});
+
+// 	// A more advanced query: search for active Prescriptions, including med details
+// 	pt.MedicationPrescription.where.status("active")._include(
+// 			"MedicationPrescription.medication").search().then(
+// 			function(prescriptions) {
+// 				prescriptions.forEach(function(rx) {
+// 					var med = smart.cachedLink(rx, rx.medication);
+// 					var row = $("<li> " + med.name + "</li>");
+// 					$("#med_list").append(row);
+// 				});
+// 			});
+</script>
+
+<script src="/js/fhir-sandbox.js"></script>
+
+
+</head>
+
+<body ng-controller="MyController as fhir">
+	<div>4 + 3 = {{3+4}}</div>
+	<div>smart: {{fhir.smart}}</div>
+	<div>pData: {{fhir.pData}}</div>
+
+	<h1>Patient name: {{ptName}}</h1>
+	<button ng-click="fhir.getPatientInfo()">Get patient info</button>
+
+	<h1>
+		Hello <span id="patient_name">...</span>!
+	</h1>
+
+	<ul id="med_list"></ul>
+</body>
+</html>

@@ -3,11 +3,10 @@
 	<div class="panel-body properties-panel">
 		<div>
 			<div class="pull-right" style="vertical-align: bottom">
-				<toggle-switch ng-model="itemCtrl.activeItem.selected" knob-label="status"></toggle-switch>
+				<toggle-switch ng-model="itemCtrl.activeItem.selected" knob-label="display"></toggle-switch>
 			</div>
 			<h3>{{itemCtrl.activeItem.name}}</h3>
 		</div>
-		
 		
 		<div ng-repeat="fieldId in itemCtrl.activeItem.itemFields">
 			<div ng-init="field=fields[fieldId]">
